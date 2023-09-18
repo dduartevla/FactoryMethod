@@ -14,4 +14,14 @@ class AventureiroFactoryTest {
         }
     }
 
+    @Test
+    void deveRetornarExcecaoParaAventureiroInvalido(){
+        try {
+            IAventureiro aventureiro= AventureiroFactory.obterAventureiro("Paladino");
+            fail();
+        } catch (IllegalArgumentException e){
+            assertEquals("Aventureiro inválido", e.getMessage());
+        }
+    }
+
 }
